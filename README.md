@@ -8,7 +8,7 @@ En este presente ítem del laboratorio se tendrá como motivo el manipular archi
 ### 1. archivo ''evento.py''
 Este archivo contiene la clase 'EventManager' que se encarga de manejar eventos y sus suscriptores.
 
-### - EventManager:
+### -- EventManager:
 ### - **init (self)**: 
 El constructor inicializa con un diccionario 'subscribers' para mantener un registro de los eventos juntando sus respectivos suscriptores.
 ### - **subscribe (self, event, callback)**: 
