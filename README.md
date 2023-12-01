@@ -10,8 +10,8 @@ Este archivo contiene la clase 'EventManager' que se encarga de manejar eventos 
 
 ### -- EventManager
 ### - ** `init (self)` **: 
-El constructor inicializa con un diccionario 'subscribers' para mantener un registro de los eventos juntando sus respectivos suscriptores.
-### - **subscribe (self, event, callback)**: 
+El constructor inicializa con un diccionario '`subscribers`' para mantener un registro de los eventos juntando sus respectivos suscriptores.
+### - ** `subscribe (self, event, callback)` **: 
 Este método permite suscribir un callback a un evento. Si el evento no existe en el diccionario 'subscribers', se crea una entrada para el evento y se agrega el callback a la lista de suscriptores de ese evento.
 ### - **unsubscribe(self, event, callback)**: 
 Permite anular la suscripción de un callback de un evento específico. Si el evento y el callback existen en el diccionario subscribers, se elimina el callback de la lista de suscriptores.
