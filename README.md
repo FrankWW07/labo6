@@ -20,3 +20,19 @@ Este método notifica a todos los suscriptores de un evento dado. Recorre la lis
 
 ### 2. archivo ''dataManager.py''
 El archivo crea uns instancia, para poder suscribir esta función de callback al evento '`datos_actualizados`' usando el '`EventManager`' del '`RealTimeDataManager`'. Luego, define una función de callback '`imprimir_datos_actualizados`' para imprimir los datos actualizados de temperatura y humedad (en este caso). Posteriormente, inicia un hilo para ejecutar '`start_real_time_updates`' en el segundo plano. Finalmente, para salirse del bucle se realizará una interrupción con el teclado en la función '`KeyboardInterrupt`' usando 'Ctrl + C' para detener las actualizaciones.
+
+### -- **paquetes importados**
+paquetes '`time`' (funcionalidad con el tiempo), '`random`' (generar números aleatorios), '`thereading`' (para trabajar con hilos así realizar operaciones en paralelo), '`EventManager`'  clase del archivo '`evento.py`'.
+
+### -- clase '`RealTimeDataManager`'
+### - ** `init (self)` **
+Constructor que inicializa un diccionario `data` con datos iniciales de temperatura y humedad, así como la instancia de `EventManager`. También se usó un booleano `running` para controlar la ejecución del programa.
+
+### - ** `start_real_time_updates(self)` **:
+Este método comienza un bucle que se ejecuta mientras `running` sea `True`. Cada 3 segundos, genera datos aleatorios de temperatura y humedad y notifica a los suscriptores del evento 'datos_actualizados' a través del `EventManager`.
+
+### - ** `generate_real_time_data(self)` **: 
+Genera datos aleatorios de temperatura y humedad simulando actualizaciones en tiempo real.
+
+### -- ** `stop_updates(self)` **: 
+Cambia el estado de `running` a `False`, lo que detiene el bucle de actualización en tiempo real.
