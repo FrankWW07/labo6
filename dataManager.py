@@ -32,10 +32,9 @@ real_time_data_manager = RealTimeDataManager()
 
 # Función de callback para imprimir los datos actualizados
 def imprimir_datos_actualizados(data):
-  print("Datos actualizados:")
-  print(f"Temperatura: {data['temperatura']} °C")
-  print(f"Humedad: {data['humedad']} %")
-  print("-----------")
+ print("Datos en tiempo real actualizados:")
+ print("{"f"'Temperatura' (°C): {data['temperatura']}, 'Humedad' (%): {data['humedad']}"+"}")
+ print("-----------")
 
 # Suscribimos el callback al EventManager para el evento 'datos_actualizados'
 real_time_data_manager.event_manager.subscribe('datos_actualizados', imprimir_datos_actualizados)
